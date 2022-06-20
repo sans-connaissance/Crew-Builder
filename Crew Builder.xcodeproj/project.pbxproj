@@ -11,6 +11,8 @@
 		413EC46B2860BD70000C1993 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC46A2860BD70000C1993 /* SceneDelegate.swift */; };
 		413EC4722860BD71000C1993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 413EC4712860BD71000C1993 /* Assets.xcassets */; };
 		413EC4752860BD71000C1993 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413EC4732860BD71000C1993 /* LaunchScreen.storyboard */; };
+		413EC48A2860D0FC000C1993 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4892860D0FC000C1993 /* SearchVC.swift */; };
+		413EC48C2860D172000C1993 /* CrewListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC48B2860D172000C1993 /* CrewListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		413EC4712860BD71000C1993 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		413EC4742860BD71000C1993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		413EC4762860BD71000C1993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		413EC4892860D0FC000C1993 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		413EC48B2860D172000C1993 /* CrewListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 		413EC47E2860CEAA000C1993 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				413EC4892860D0FC000C1993 /* SearchVC.swift */,
+				413EC48B2860D172000C1993 /* CrewListVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +233,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				413EC48A2860D0FC000C1993 /* SearchVC.swift in Sources */,
+				413EC48C2860D172000C1993 /* CrewListVC.swift in Sources */,
 				413EC4692860BD70000C1993 /* AppDelegate.swift in Sources */,
 				413EC46B2860BD70000C1993 /* SceneDelegate.swift in Sources */,
 			);
@@ -296,7 +304,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -350,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
