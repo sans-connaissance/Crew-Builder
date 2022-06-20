@@ -53,17 +53,15 @@ class UserInfoVC: UIViewController {
     
     func configureUIElements(with user: User) {
         
-//        let repoItemViewController = GFRepoItemViewController(user: user)
-//        repoItemViewController.delegate = self
-//
-//        let followerItemViewController = GFFollowerItemViewController(user: user)
-//        followerItemViewController.delegate = self
-//
-//
-//        self.add(childVC: GCUserInfoHeaderViewController(user: user), to: self.headerView)
-//        self.add(childVC: repoItemViewController, to: self.itemViewOne)
-//        self.add(childVC: followerItemViewController, to: self.itemViewTwo)
-//        self.dateLabel.text = "GitHub Since \(user.createdAt.convertToDisplayFormat())"
+        let repoItemViewController = ProfileItemVC(user: user)
+        repoItemViewController.delegate = self
+
+
+
+        self.add(childVC: CBUserInfoHeaderVC(user: user), to: self.headerView)
+        self.add(childVC: repoItemViewController, to: self.itemViewOne)
+   
+        self.dateLabel.text = "GitHub Since \(user.createdAt.convertToDisplayFormat())"
         
     }
     

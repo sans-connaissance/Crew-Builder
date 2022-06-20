@@ -144,7 +144,6 @@
 				413EC48B2860D172000C1993 /* CrewListVC.swift */,
 				413EC4B32860EB42000C1993 /* CBAlertVC.swift */,
 				413EC4B52860EDB7000C1993 /* PersonListVC.swift */,
-				413EC4B92860F473000C1993 /* UserInfoVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -234,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				413EC48F2860DF74000C1993 /* CBEmptyStateView.swift */,
-				413EC4912860DFA5000C1993 /* CBItemInfoView.swift */,
 			);
 			path = "Composed Views";
 			sourceTree = "<group>";
@@ -242,9 +240,11 @@
 		413EC4BB2860FEB6000C1993 /* User Info */ = {
 			isa = PBXGroup;
 			children = (
+				413EC4B92860F473000C1993 /* UserInfoVC.swift */,
 				413EC4BC2860FF04000C1993 /* CBUserInfoHeaderVC.swift */,
 				413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */,
 				413EC4C02860FFE0000C1993 /* ProfileItemVC.swift */,
+				413EC4912860DFA5000C1993 /* CBItemInfoView.swift */,
 			);
 			path = "User Info";
 			sourceTree = "<group>";
