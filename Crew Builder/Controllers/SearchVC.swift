@@ -9,20 +9,17 @@ import UIKit
 
 class SearchVC: UIViewController {
     let logoImageView = UIImageView()
-    let usernameTextField = CBTextField()
-    let callToActionButton = CBButton(backgroundColor: .systemGreen, title: "Get Followers")
-    
-    var isUsernameEntered: Bool {
-        return !usernameTextField.text!.isEmpty
-    }
+    let onboardingTitleLabel = CBTitleLabel()
+    let onboardingBodyLabel = CBBodyLabel()
+    let callToActionButton = CBButton(backgroundColor: .systemPurple, title: "Search")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureLogoImageView()
-        configureTextField()
+        configureTitleLabel()
+        configureBodyLabel()
         configureCallToActionButton()
-        createDismissKeyboardTapGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,29 +27,16 @@ class SearchVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    func createDismissKeyboardTapGesture() {
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
-    }
-    
     @objc func pushFollowerListViewController() {
-        guard isUsernameEntered else {
-            presentCBAlertOnMainThread(title: "Empty Username", message: "Please enter a username.", buttonTitle: "Ok")
-            return
-        }
-        
-        // THIS IS WHERE THE SCREEN IS ANIMATED
         let personListVC = PersonListVC()
-        personListVC.username = usernameTextField.text
-        personListVC.title = usernameTextField.text
+        personListVC.username = "sallen0400"
+        personListVC.title = "Pros Near You"
         navigationController?.pushViewController(personListVC, animated: true)
     }
     
     func configureLogoImageView() {
-        // same as dragging element onto the storyboard
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        // think about putting this into a constant
         logoImageView.image = UIImage(named: "gh-logo")!
         
         NSLayoutConstraint.activate([
@@ -63,17 +47,31 @@ class SearchVC: UIViewController {
         ])
     }
     
-    func configureTextField() {
-        view.addSubview(usernameTextField)
+    func configureTitleLabel() {
+        view.addSubview(onboardingTitleLabel)
         // delegate is necessary so that the UITextFieldDelegate func knows what to listen for.
-        usernameTextField.delegate = self
+        onboardingTitleLabel.textAlignment = .center
+        onboardingTitleLabel.text = "Build Your Crew"
         
         NSLayoutConstraint.activate([
-            usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 40),
-            usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            usernameTextField.heightAnchor.constraint(equalToConstant: 50)
+            onboardingTitleLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 40),
+            onboardingTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            onboardingTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            onboardingTitleLabel.heightAnchor.constraint(equalToConstant: 80)
+        ])
+    }
+    
+    func configureBodyLabel() {
+        view.addSubview(onboardingBodyLabel)
+        // delegate is necessary so that the UITextFieldDelegate func knows what to listen for.
+        onboardingBodyLabel.textAlignment = .center
+        onboardingBodyLabel.text = "Find skilled production professionals in your area with Crew Builder Search."
         
+        NSLayoutConstraint.activate([
+            onboardingBodyLabel.topAnchor.constraint(equalTo: onboardingTitleLabel.bottomAnchor, constant: 40),
+            onboardingBodyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            onboardingBodyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            onboardingBodyLabel.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
     
@@ -87,12 +85,5 @@ class SearchVC: UIViewController {
             callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             callToActionButton.heightAnchor.constraint(equalToConstant: 50)
         ])
-    }
-}
-
-extension SearchVC: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        pushFollowerListViewController()
-        return true
     }
 }
