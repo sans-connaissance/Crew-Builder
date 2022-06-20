@@ -39,6 +39,7 @@
 		413EC4BD2860FF04000C1993 /* CBUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4BC2860FF04000C1993 /* CBUserInfoHeaderVC.swift */; };
 		413EC4BF2860FF40000C1993 /* CBItemForInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */; };
 		413EC4C12860FFE0000C1993 /* ProfileItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4C02860FFE0000C1993 /* ProfileItemVC.swift */; };
+		413EC4C328613236000C1993 /* CBSkillLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4C228613236000C1993 /* CBSkillLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		413EC4BC2860FF04000C1993 /* CBUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBUserInfoHeaderVC.swift; sourceTree = "<group>"; };
 		413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBItemForInfoVC.swift; sourceTree = "<group>"; };
 		413EC4C02860FFE0000C1993 /* ProfileItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemVC.swift; sourceTree = "<group>"; };
+		413EC4C228613236000C1993 /* CBSkillLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBSkillLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				413EC4932860DFC6000C1993 /* CBBodyLabel.swift */,
 				413EC4952860DFD6000C1993 /* CBTitleLabel.swift */,
 				413EC4972860DFE5000C1993 /* CBSecondaryTitleLabel.swift */,
+				413EC4C228613236000C1993 /* CBSkillLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				413EC4922860DFA5000C1993 /* CBItemInfoView.swift in Sources */,
 				413EC4A02860E0ED000C1993 /* CrewListCell.swift in Sources */,
 				413EC4AE2860E8A7000C1993 /* UIViewController+Extensions.swift in Sources */,
+				413EC4C328613236000C1993 /* CBSkillLabel.swift in Sources */,
 				413EC4B22860E8F0000C1993 /* String+Extension.swift in Sources */,
 				413EC46B2860BD70000C1993 /* SceneDelegate.swift in Sources */,
 				413EC4982860DFE5000C1993 /* CBSecondaryTitleLabel.swift in Sources */,

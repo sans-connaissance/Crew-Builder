@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum SkillsList {
+    case repos, gists, followers, following
+}
+
 class CBUserInfoHeaderVC: UIViewController {
 
     let avatarImageView = CBAvatarImageView(frame: .zero)
@@ -14,7 +18,7 @@ class CBUserInfoHeaderVC: UIViewController {
     let nameLabel = CBSecondaryTitleLabel(fontSize: 18)
     let locationImageView = UIImageView()
     let locationLabel = CBSecondaryTitleLabel(fontSize: 18)
-    let bioLabel = CBBodyLabel(textAlignment: .left)
+    let skillLabel = CBSkillLabel(textAlignment: .left)
     
     var user: User!
     
@@ -27,7 +31,6 @@ class CBUserInfoHeaderVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -39,13 +42,16 @@ class CBUserInfoHeaderVC: UIViewController {
         avatarImageView.downloadImage(from: user.avatarUrl)
         usernameLabel.text = user.login
         nameLabel.text = user.name ?? ""
-        locationLabel.text = user.location ?? "Location not specified"
-        bioLabel.text = user.bio ?? "No Bio Available"
-        bioLabel.numberOfLines = 3
-        
+        configureSkillsLabel()
+        locationLabel.text = "Carmel, Indiana"
         locationImageView.image = UIImage(systemName: SFSymbols.location)
         locationImageView.tintColor = .secondaryLabel
-
+    }
+    
+    func configureSkillsLabel() {
+        let skill = skillLabel.returnSkill(from: user.login.count)
+        skillLabel.text = skill
+        skillLabel.numberOfLines = 3
     }
     
     func addSubviews() {
@@ -54,12 +60,10 @@ class CBUserInfoHeaderVC: UIViewController {
         view.addSubview(nameLabel)
         view.addSubview(locationImageView)
         view.addSubview(locationLabel)
-        view.addSubview(bioLabel)
-        
+        view.addSubview(skillLabel)
     }
     
     func layoutUI() {
-        
         let padding: CGFloat = 20
         let textImagePadding: CGFloat = 12
         locationImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -90,10 +94,10 @@ class CBUserInfoHeaderVC: UIViewController {
             locationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             locationLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            bioLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: textImagePadding),
-            bioLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
-            bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            bioLabel.heightAnchor.constraint(equalToConstant: 60),
+            skillLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: textImagePadding),
+            skillLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
+            skillLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            skillLabel.heightAnchor.constraint(equalToConstant: 60),
 
         ])
     }

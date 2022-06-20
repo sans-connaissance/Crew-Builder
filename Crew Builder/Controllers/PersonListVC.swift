@@ -62,7 +62,7 @@ class PersonListVC: UIViewController {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search for a username"
+        searchController.searchBar.placeholder = "Refine your search"
         searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController

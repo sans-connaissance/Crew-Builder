@@ -9,8 +9,10 @@ import UIKit
 
 class PersonCollectionViewCell: UICollectionViewCell {
     static let reuseID = "PersonCell"
+    let usernameLabel = CBTitleLabel(textAlignment: .left, fontSize: 16)
     let avatarImageView = CBAvatarImageView(frame: .zero)
-    let usernameLabel = CBTitleLabel(textAlignment: .center, fontSize: 16)
+    let skillLabel = CBSkillLabel(textAlignment: .center)
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,25 +26,37 @@ class PersonCollectionViewCell: UICollectionViewCell {
     func set(person: Person) {
         usernameLabel.text = person.login
         avatarImageView.downloadImage(from: person.avatarUrl)
+        let skill = skillLabel.returnSkill(from: person.login.count)
+        skillLabel.text = skill
     }
     
+    
     private func configure() {
-        addSubview(avatarImageView)
         addSubview(usernameLabel)
+        addSubview(avatarImageView)
+        addSubview(skillLabel)
+
         
         let padding: CGFloat = 8
         
         NSLayoutConstraint.activate([
+            
+            usernameLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            usernameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            usernameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            usernameLabel.heightAnchor.constraint(equalToConstant: 20),
         
-            avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            avatarImageView.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 2),
             avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             avatarImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),
             
-            usernameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 12),
-            usernameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
-            usernameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
-            usernameLabel.heightAnchor.constraint(equalToConstant: 20)
+            skillLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 2),
+            skillLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            skillLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            skillLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+
             
             
         ])
