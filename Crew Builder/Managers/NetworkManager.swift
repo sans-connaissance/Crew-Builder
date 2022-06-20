@@ -5,16 +5,6 @@
 //  Created by David Malicke on 6/20/22.
 //
 
-import Foundation
-
-
-//
-//  NetworkManager.swift
-//  Tutorial-GitHub-Followers
-//
-//  Created by David Malicke on 6/18/22.
-//
-
 import UIKit
 
 class NetworkManager {
@@ -24,7 +14,7 @@ class NetworkManager {
     
     private init() {}
     
-    func getPersons(for userName: String, page: Int, completed: @escaping(Result<[Person], CBError>) -> Void) {
+    func getPersons(for userName: String, page: Int, completed: @escaping (Result<[Person], CBError>) -> Void) {
         let endPoint = baseURL + "\(userName)/followers?per_page=100&page=\(page)"
         guard let url = URL(string: endPoint) else {
             completed(.failure(.invalidUserName))
@@ -53,15 +43,13 @@ class NetworkManager {
                 let followers = try decoder.decode([Person].self, from: data)
                 completed(.success(followers))
             } catch {
-              //  completed(nil, error.localizedDescription)
                 completed(.failure(.invalidData))
             }
         }
         task.resume()
     }
     
-    
-    func getUserInfo(for username: String, completed: @escaping(Result<User, CBError>) -> Void) {
+    func getUserInfo(for username: String, completed: @escaping (Result<User, CBError>) -> Void) {
         let endPoint = baseURL + "\(username)"
         
         guard let url = URL(string: endPoint) else {
@@ -91,11 +79,10 @@ class NetworkManager {
                 let user = try decoder.decode(User.self, from: data)
                 completed(.success(user))
             } catch {
-              //  completed(nil, error.localizedDescription)
+                //  completed(nil, error.localizedDescription)
                 completed(.failure(.invalidData))
             }
         }
         task.resume()
     }
-    
 }
