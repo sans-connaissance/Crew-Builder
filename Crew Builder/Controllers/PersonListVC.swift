@@ -123,13 +123,13 @@ class PersonListVC: UIViewController {
                     guard let self = self else {return}
                     
                     guard let error = error else {
-                        self.presentGFAlertOnMainThread(title: "Success!", message: "You have successfully favorited this user.", buttonTitle: "Hooray")
+                        self.presentCBAlertOnMainThread(title: "Success!", message: "This person is now in your crew.", buttonTitle: "Congrats!")
                         return
                     }
-                    self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                    self.presentCBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
                 }
             case .failure(let error):
-                self.presentCBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                self.presentCBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
             }
         }
     }
@@ -145,15 +145,15 @@ extension PersonListVC: UICollectionViewDelegate {
         if offSetY > contentHeight - height {
             guard hasMoreFollowers else { return }
             page += 1
-            getFollowers(username: username, page: page)
+            getPersons(username: username, page: page)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let activeArray = isSearching ? filteredFollowers : followers
+        let activeArray = isSearching ? filteredPersons : persons
         let follower = activeArray[indexPath.item]
-        let destinationViewController = UserInfoViewController()
+        let destinationViewController = UserInfoVC()
         destinationViewController.username = follower.login
         destinationViewController.delegate = self
         let navigationController = UINavigationController(rootViewController: destinationViewController)
@@ -161,29 +161,29 @@ extension PersonListVC: UICollectionViewDelegate {
     }
 }
 
-extension FollowerListViewController: UISearchResultsUpdating, UISearchBarDelegate {
+extension PersonListVC: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else {return}
         isSearching = true
-        filteredFollowers = followers.filter {$0.login.lowercased().contains(filter.lowercased())}
-        updateData(on: filteredFollowers)
+        filteredPersons = persons.filter {$0.login.lowercased().contains(filter.lowercased())}
+        updateData(on: filteredPersons)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isSearching = false
-        updateData(on: followers)
+        updateData(on: persons)
     }
 }
 
-extension FollowerListViewController: FollowerListViewControllerDelegate {
-    func didRequestFollowers(for username: String) {
+extension PersonListVC: PersonListVCDelegate {
+    func didRequestPersons(for username: String) {
         self.username = username
         title = username
         page = 1
-        followers.removeAll()
-        filteredFollowers.removeAll()
+        persons.removeAll()
+        filteredPersons.removeAll()
         collectionView.setContentOffset(.zero, animated: true)
-        getFollowers(username: username, page: page)
+        getPersons(username: username, page: page)
         
     }
 }
