@@ -23,6 +23,12 @@
 		413EC49C2860E03A000C1993 /* CBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC49B2860E03A000C1993 /* CBButton.swift */; };
 		413EC49E2860E0C5000C1993 /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC49D2860E0C5000C1993 /* PersonCollectionViewCell.swift */; };
 		413EC4A02860E0ED000C1993 /* CrewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC49F2860E0ED000C1993 /* CrewListCell.swift */; };
+		413EC4A22860E580000C1993 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4A12860E580000C1993 /* NetworkManager.swift */; };
+		413EC4A42860E62D000C1993 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4A32860E62D000C1993 /* Person.swift */; };
+		413EC4A62860E644000C1993 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4A52860E644000C1993 /* User.swift */; };
+		413EC4A82860E6E8000C1993 /* CBErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4A72860E6E8000C1993 /* CBErrors.swift */; };
+		413EC4AA2860E796000C1993 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4A92860E796000C1993 /* UIHelper.swift */; };
+		413EC4AC2860E7D4000C1993 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4AB2860E7D4000C1993 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,12 @@
 		413EC49B2860E03A000C1993 /* CBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBButton.swift; sourceTree = "<group>"; };
 		413EC49D2860E0C5000C1993 /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
 		413EC49F2860E0ED000C1993 /* CrewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewListCell.swift; sourceTree = "<group>"; };
+		413EC4A12860E580000C1993 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		413EC4A32860E62D000C1993 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		413EC4A52860E644000C1993 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		413EC4A72860E6E8000C1993 /* CBErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBErrors.swift; sourceTree = "<group>"; };
+		413EC4A92860E796000C1993 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		413EC4AB2860E7D4000C1993 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,8 @@
 		413EC4802860CEB0000C1993 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				413EC4A32860E62D000C1993 /* Person.swift */,
+				413EC4A52860E644000C1993 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,6 +144,7 @@
 		413EC4812860CEB3000C1993 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				413EC4A12860E580000C1993 /* NetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -137,6 +152,9 @@
 		413EC4822860CEB5000C1993 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				413EC4A72860E6E8000C1993 /* CBErrors.swift */,
+				413EC4A92860E796000C1993 /* UIHelper.swift */,
+				413EC4AB2860E7D4000C1993 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -270,12 +288,18 @@
 				413EC49A2860E008000C1993 /* CBTextField.swift in Sources */,
 				413EC4692860BD70000C1993 /* AppDelegate.swift in Sources */,
 				413EC4962860DFD6000C1993 /* CBTitleLabel.swift in Sources */,
+				413EC4A62860E644000C1993 /* User.swift in Sources */,
 				413EC4922860DFA5000C1993 /* CBItemInfoView.swift in Sources */,
 				413EC4A02860E0ED000C1993 /* CrewListCell.swift in Sources */,
 				413EC46B2860BD70000C1993 /* SceneDelegate.swift in Sources */,
 				413EC4982860DFE5000C1993 /* CBSecondaryTitleLabel.swift in Sources */,
 				413EC4902860DF74000C1993 /* CBEmptyStateView.swift in Sources */,
+				413EC4A82860E6E8000C1993 /* CBErrors.swift in Sources */,
+				413EC4A22860E580000C1993 /* NetworkManager.swift in Sources */,
+				413EC4AC2860E7D4000C1993 /* Constants.swift in Sources */,
+				413EC4AA2860E796000C1993 /* UIHelper.swift in Sources */,
 				413EC49C2860E03A000C1993 /* CBButton.swift in Sources */,
+				413EC4A42860E62D000C1993 /* Person.swift in Sources */,
 				413EC4942860DFC6000C1993 /* CBBodyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
