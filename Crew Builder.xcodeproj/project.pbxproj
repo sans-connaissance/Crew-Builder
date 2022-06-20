@@ -13,6 +13,16 @@
 		413EC4752860BD71000C1993 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413EC4732860BD71000C1993 /* LaunchScreen.storyboard */; };
 		413EC48A2860D0FC000C1993 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4892860D0FC000C1993 /* SearchVC.swift */; };
 		413EC48C2860D172000C1993 /* CrewListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC48B2860D172000C1993 /* CrewListVC.swift */; };
+		413EC48E2860DF5B000C1993 /* CBAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC48D2860DF5B000C1993 /* CBAvatarImageView.swift */; };
+		413EC4902860DF74000C1993 /* CBEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC48F2860DF74000C1993 /* CBEmptyStateView.swift */; };
+		413EC4922860DFA5000C1993 /* CBItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4912860DFA5000C1993 /* CBItemInfoView.swift */; };
+		413EC4942860DFC6000C1993 /* CBBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4932860DFC6000C1993 /* CBBodyLabel.swift */; };
+		413EC4962860DFD6000C1993 /* CBTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4952860DFD6000C1993 /* CBTitleLabel.swift */; };
+		413EC4982860DFE5000C1993 /* CBSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4972860DFE5000C1993 /* CBSecondaryTitleLabel.swift */; };
+		413EC49A2860E008000C1993 /* CBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4992860E008000C1993 /* CBTextField.swift */; };
+		413EC49C2860E03A000C1993 /* CBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC49B2860E03A000C1993 /* CBButton.swift */; };
+		413EC49E2860E0C5000C1993 /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC49D2860E0C5000C1993 /* PersonCollectionViewCell.swift */; };
+		413EC4A02860E0ED000C1993 /* CrewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC49F2860E0ED000C1993 /* CrewListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		413EC4762860BD71000C1993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		413EC4892860D0FC000C1993 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		413EC48B2860D172000C1993 /* CrewListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewListVC.swift; sourceTree = "<group>"; };
+		413EC48D2860DF5B000C1993 /* CBAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBAvatarImageView.swift; sourceTree = "<group>"; };
+		413EC48F2860DF74000C1993 /* CBEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBEmptyStateView.swift; sourceTree = "<group>"; };
+		413EC4912860DFA5000C1993 /* CBItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBItemInfoView.swift; sourceTree = "<group>"; };
+		413EC4932860DFC6000C1993 /* CBBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBBodyLabel.swift; sourceTree = "<group>"; };
+		413EC4952860DFD6000C1993 /* CBTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTitleLabel.swift; sourceTree = "<group>"; };
+		413EC4972860DFE5000C1993 /* CBSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		413EC4992860E008000C1993 /* CBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTextField.swift; sourceTree = "<group>"; };
+		413EC49B2860E03A000C1993 /* CBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBButton.swift; sourceTree = "<group>"; };
+		413EC49D2860E0C5000C1993 /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
+		413EC49F2860E0ED000C1993 /* CrewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +144,8 @@
 		413EC4832860CF2D000C1993 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				413EC49D2860E0C5000C1993 /* PersonCollectionViewCell.swift */,
+				413EC49F2860E0ED000C1993 /* CrewListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -131,6 +153,7 @@
 		413EC4842860CF2F000C1993 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				413EC49B2860E03A000C1993 /* CBButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -138,6 +161,7 @@
 		413EC4852860CF30000C1993 /* ImageViews */ = {
 			isa = PBXGroup;
 			children = (
+				413EC48D2860DF5B000C1993 /* CBAvatarImageView.swift */,
 			);
 			path = ImageViews;
 			sourceTree = "<group>";
@@ -145,6 +169,7 @@
 		413EC4862860CF35000C1993 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
+				413EC4992860E008000C1993 /* CBTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -152,6 +177,9 @@
 		413EC4872860CF38000C1993 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
+				413EC4932860DFC6000C1993 /* CBBodyLabel.swift */,
+				413EC4952860DFD6000C1993 /* CBTitleLabel.swift */,
+				413EC4972860DFE5000C1993 /* CBSecondaryTitleLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -159,6 +187,8 @@
 		413EC4882860CF3A000C1993 /* Composed Views */ = {
 			isa = PBXGroup;
 			children = (
+				413EC48F2860DF74000C1993 /* CBEmptyStateView.swift */,
+				413EC4912860DFA5000C1993 /* CBItemInfoView.swift */,
 			);
 			path = "Composed Views";
 			sourceTree = "<group>";
@@ -234,9 +264,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				413EC48A2860D0FC000C1993 /* SearchVC.swift in Sources */,
+				413EC49E2860E0C5000C1993 /* PersonCollectionViewCell.swift in Sources */,
 				413EC48C2860D172000C1993 /* CrewListVC.swift in Sources */,
+				413EC48E2860DF5B000C1993 /* CBAvatarImageView.swift in Sources */,
+				413EC49A2860E008000C1993 /* CBTextField.swift in Sources */,
 				413EC4692860BD70000C1993 /* AppDelegate.swift in Sources */,
+				413EC4962860DFD6000C1993 /* CBTitleLabel.swift in Sources */,
+				413EC4922860DFA5000C1993 /* CBItemInfoView.swift in Sources */,
+				413EC4A02860E0ED000C1993 /* CrewListCell.swift in Sources */,
 				413EC46B2860BD70000C1993 /* SceneDelegate.swift in Sources */,
+				413EC4982860DFE5000C1993 /* CBSecondaryTitleLabel.swift in Sources */,
+				413EC4902860DF74000C1993 /* CBEmptyStateView.swift in Sources */,
+				413EC49C2860E03A000C1993 /* CBButton.swift in Sources */,
+				413EC4942860DFC6000C1993 /* CBBodyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
