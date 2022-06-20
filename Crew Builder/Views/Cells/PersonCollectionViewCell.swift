@@ -9,7 +9,7 @@ import UIKit
 
 class PersonCollectionViewCell: UICollectionViewCell {
     static let reuseID = "PersonCell"
-    let usernameLabel = CBTitleLabel(textAlignment: .left, fontSize: 16)
+    let usernameLabel = CBTitleLabel(textAlignment: .center, fontSize: 16)
     let avatarImageView = CBAvatarImageView(frame: .zero)
     let skillLabel = CBSkillLabel(textAlignment: .center)
     

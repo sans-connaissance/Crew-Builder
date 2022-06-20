@@ -37,7 +37,7 @@ class CrewListVC: UIViewController {
     func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Favorites"
+        title = "Your Crew"
     }
     
     func getFavorites() {

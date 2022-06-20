@@ -12,6 +12,7 @@ class CrewListCell: UITableViewCell {
     static let reuseID = "CrewListCell"
     let avatarImageView = CBAvatarImageView(frame: .zero)
     let usernameLabel = CBTitleLabel(textAlignment: .left, fontSize: 26)
+    let skillLabel = CBSkillLabel(textAlignment: .left)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,11 +26,14 @@ class CrewListCell: UITableViewCell {
     func set(newMember: Person) {
         usernameLabel.text = newMember.login
         avatarImageView.downloadImage(from: newMember.avatarUrl)
+        let skill = skillLabel.returnSkill(from: newMember.login.count)
+        skillLabel.text = skill
     }
     
     private func configure() {
         addSubview(avatarImageView)
         addSubview(usernameLabel)
+        addSubview(skillLabel)
         
         accessoryType = .disclosureIndicator
         let padding: CGFloat = 12
@@ -40,10 +44,15 @@ class CrewListCell: UITableViewCell {
             avatarImageView.heightAnchor.constraint(equalToConstant: 60),
             avatarImageView.widthAnchor.constraint(equalToConstant: 60),
             
-            usernameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            usernameLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
             usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 24),
             usernameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            usernameLabel.heightAnchor.constraint(equalToConstant: 40)
+            usernameLabel.heightAnchor.constraint(equalToConstant: 35),
+            
+            skillLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 0),
+            skillLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 24),
+            skillLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
+            skillLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
