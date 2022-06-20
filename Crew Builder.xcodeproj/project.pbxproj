@@ -36,6 +36,9 @@
 		413EC4B62860EDB7000C1993 /* PersonListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4B52860EDB7000C1993 /* PersonListVC.swift */; };
 		413EC4B82860F2F6000C1993 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4B72860F2F6000C1993 /* PersistenceManager.swift */; };
 		413EC4BA2860F473000C1993 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4B92860F473000C1993 /* UserInfoVC.swift */; };
+		413EC4BD2860FF04000C1993 /* CBUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4BC2860FF04000C1993 /* CBUserInfoHeaderVC.swift */; };
+		413EC4BF2860FF40000C1993 /* CBItemForInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */; };
+		413EC4C12860FFE0000C1993 /* ProfileItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4C02860FFE0000C1993 /* ProfileItemVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		413EC4B52860EDB7000C1993 /* PersonListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListVC.swift; sourceTree = "<group>"; };
 		413EC4B72860F2F6000C1993 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		413EC4B92860F473000C1993 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		413EC4BC2860FF04000C1993 /* CBUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBUserInfoHeaderVC.swift; sourceTree = "<group>"; };
+		413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBItemForInfoVC.swift; sourceTree = "<group>"; };
+		413EC4C02860FFE0000C1993 /* ProfileItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,7 @@
 		413EC47E2860CEAA000C1993 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				413EC4BB2860FEB6000C1993 /* User Info */,
 				413EC4892860D0FC000C1993 /* SearchVC.swift */,
 				413EC48B2860D172000C1993 /* CrewListVC.swift */,
 				413EC4B32860EB42000C1993 /* CBAlertVC.swift */,
@@ -232,6 +239,16 @@
 			path = "Composed Views";
 			sourceTree = "<group>";
 		};
+		413EC4BB2860FEB6000C1993 /* User Info */ = {
+			isa = PBXGroup;
+			children = (
+				413EC4BC2860FF04000C1993 /* CBUserInfoHeaderVC.swift */,
+				413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */,
+				413EC4C02860FFE0000C1993 /* ProfileItemVC.swift */,
+			);
+			path = "User Info";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,12 +329,14 @@
 				413EC4692860BD70000C1993 /* AppDelegate.swift in Sources */,
 				413EC4962860DFD6000C1993 /* CBTitleLabel.swift in Sources */,
 				413EC4A62860E644000C1993 /* User.swift in Sources */,
+				413EC4C12860FFE0000C1993 /* ProfileItemVC.swift in Sources */,
 				413EC4922860DFA5000C1993 /* CBItemInfoView.swift in Sources */,
 				413EC4A02860E0ED000C1993 /* CrewListCell.swift in Sources */,
 				413EC4AE2860E8A7000C1993 /* UIViewController+Extensions.swift in Sources */,
 				413EC4B22860E8F0000C1993 /* String+Extension.swift in Sources */,
 				413EC46B2860BD70000C1993 /* SceneDelegate.swift in Sources */,
 				413EC4982860DFE5000C1993 /* CBSecondaryTitleLabel.swift in Sources */,
+				413EC4BF2860FF40000C1993 /* CBItemForInfoVC.swift in Sources */,
 				413EC4902860DF74000C1993 /* CBEmptyStateView.swift in Sources */,
 				413EC4B42860EB42000C1993 /* CBAlertVC.swift in Sources */,
 				413EC4A82860E6E8000C1993 /* CBErrors.swift in Sources */,
@@ -327,6 +346,7 @@
 				413EC49C2860E03A000C1993 /* CBButton.swift in Sources */,
 				413EC4A42860E62D000C1993 /* Person.swift in Sources */,
 				413EC4942860DFC6000C1993 /* CBBodyLabel.swift in Sources */,
+				413EC4BD2860FF04000C1993 /* CBUserInfoHeaderVC.swift in Sources */,
 				413EC4B62860EDB7000C1993 /* PersonListVC.swift in Sources */,
 				413EC4BA2860F473000C1993 /* UserInfoVC.swift in Sources */,
 			);
