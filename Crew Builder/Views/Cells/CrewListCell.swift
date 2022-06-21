@@ -35,7 +35,7 @@ class CrewListCell: UITableViewCell {
         addSubview(usernameLabel)
         addSubview(skillLabel)
         
-        accessoryType = .disclosureIndicator
+        accessoryType = .none
         let padding: CGFloat = 12
         
         NSLayoutConstraint.activate([

@@ -8,15 +8,13 @@
 import UIKit
 
 protocol UserInfoVCDelegate: AnyObject {
-    func didTapGitHubProfile(for user: User)
-    func didTapGetFollowers(for user: User)
+    func didTapAddButton(for user: User)
 }
 
 class UserInfoVC: UIViewController {
     
     let headerView = UIView()
     let itemViewOne = UIView()
-    let itemViewTwo = UIView()
     let dateLabel = CBBodyLabel(textAlignment: .center)
     var itemViews: [UIView] = []
     
@@ -52,18 +50,17 @@ class UserInfoVC: UIViewController {
     
     func configureUIElements(with user: User) {
         
-        let repoItemViewController = CBProductionItemVC(user: user)
-        repoItemViewController.delegate = self
+        let productionItemVC = CBProductionItemVC(user: user)
+        productionItemVC.delegate = self
         
         self.add(childVC: CBUserInfoHeaderVC(user: user), to: self.headerView)
-        self.add(childVC: repoItemViewController, to: self.itemViewOne)
-   
-        self.dateLabel.text = "GitHub Since \(user.createdAt.convertToDisplayFormat())"
+        self.add(childVC: productionItemVC, to: self.itemViewOne)
+        self.dateLabel.text = "Crew Member Since \(user.createdAt.convertToDisplayFormat())"
         
     }
     
     func layoutUI() {
-        itemViews = [headerView, itemViewOne, itemViewTwo, dateLabel]
+        itemViews = [headerView, itemViewOne, dateLabel]
         
         for itemView in itemViews {
             view.addSubview(itemView)
@@ -83,12 +80,7 @@ class UserInfoVC: UIViewController {
             itemViewOne.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             itemViewOne.heightAnchor.constraint(equalToConstant: itemHeight),
             
-            itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
-            itemViewTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            itemViewTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
-            
-            dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
+            dateLabel.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
             dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             dateLabel.heightAnchor.constraint(equalToConstant: 18),
@@ -108,21 +100,26 @@ class UserInfoVC: UIViewController {
 }
 
 extension UserInfoVC: UserInfoVCDelegate {
-    
-    func didTapGitHubProfile(for user: User) {
-        guard let url = URL(string: user.htmlUrl) else {
-            presentCBAlertOnMainThread(title: "Invalid URL", message: "The URL attached to this user is invalid", buttonTitle: "OK")
-            return
+    func didTapAddButton(for user: User) {
+        showLoadingView()
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            guard let self = self else {return}
+            self.dismissLoadingView()
+            switch result {
+            case .success(let user):
+                let favorite = Person(login: user.login, avatarUrl: user.avatarUrl)
+                PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
+                    guard let self = self else {return}
+                    
+                    guard let error = error else {
+                        self.presentCBAlertOnMainThread(title: "Congrats!", message: "This person is in your crew.", buttonTitle: "OK")
+                        return
+                    }
+                    self.presentCBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
+                }
+            case .failure(let error):
+                self.presentCBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
+            }
         }
-        presentSafariVC(with: url)
-    }
-
-    func didTapGetFollowers(for user: User) {
-        guard user.followers != 0 else {
-            presentCBAlertOnMainThread(title: "No Followers", message: "This user has no followers", buttonTitle: "Ok")
-            return
-        }
-        delegate.didRequestPersons(for: user.login)
-        dismissInfoViewController()
     }
 }

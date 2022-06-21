@@ -40,7 +40,6 @@
 		413EC4BF2860FF40000C1993 /* CBItemForInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */; };
 		413EC4C12860FFE0000C1993 /* CBProductionItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4C02860FFE0000C1993 /* CBProductionItemVC.swift */; };
 		413EC4C328613236000C1993 /* CBSkillLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4C228613236000C1993 /* CBSkillLabel.swift */; };
-		413EC4C5286145CB000C1993 /* CBCollaboratorsItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4C4286145CB000C1993 /* CBCollaboratorsItemVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +78,6 @@
 		413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBItemForInfoVC.swift; sourceTree = "<group>"; };
 		413EC4C02860FFE0000C1993 /* CBProductionItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBProductionItemVC.swift; sourceTree = "<group>"; };
 		413EC4C228613236000C1993 /* CBSkillLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBSkillLabel.swift; sourceTree = "<group>"; };
-		413EC4C4286145CB000C1993 /* CBCollaboratorsItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCollaboratorsItemVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,7 +247,6 @@
 				413EC4BC2860FF04000C1993 /* CBUserInfoHeaderVC.swift */,
 				413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */,
 				413EC4C02860FFE0000C1993 /* CBProductionItemVC.swift */,
-				413EC4C4286145CB000C1993 /* CBCollaboratorsItemVC.swift */,
 				413EC4912860DFA5000C1993 /* CBItemInfoView.swift */,
 			);
 			path = "User Info";
@@ -351,7 +348,6 @@
 				413EC4AC2860E7D4000C1993 /* Constants.swift in Sources */,
 				413EC4AA2860E796000C1993 /* UIHelper.swift in Sources */,
 				413EC49C2860E03A000C1993 /* CBButton.swift in Sources */,
-				413EC4C5286145CB000C1993 /* CBCollaboratorsItemVC.swift in Sources */,
 				413EC4A42860E62D000C1993 /* Person.swift in Sources */,
 				413EC4942860DFC6000C1993 /* CBBodyLabel.swift in Sources */,
 				413EC4BD2860FF04000C1993 /* CBUserInfoHeaderVC.swift in Sources */,

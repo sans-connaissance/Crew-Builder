@@ -16,9 +16,7 @@ class CBUserInfoHeaderVC: UIViewController {
     let avatarImageView = CBAvatarImageView(frame: .zero)
     let usernameLabel = CBTitleLabel(textAlignment: .left, fontSize: 34)
     let nameLabel = CBSecondaryTitleLabel(fontSize: 18)
-    let locationImageView = UIImageView()
-    let locationLabel = CBSecondaryTitleLabel(fontSize: 18)
-    let skillLabel = CBSkillLabel(textAlignment: .center)
+    let skillLabel = CBSkillLabel(textAlignment: .left)
     
     var user: User!
     
@@ -43,9 +41,6 @@ class CBUserInfoHeaderVC: UIViewController {
         usernameLabel.text = user.login
         nameLabel.text = user.name ?? ""
         configureSkillsLabel()
-        locationLabel.text = "Carmel, Indiana"
-        locationImageView.image = UIImage(systemName: SFSymbols.location)
-        locationImageView.tintColor = .secondaryLabel
     }
     
     func configureSkillsLabel() {
@@ -58,15 +53,13 @@ class CBUserInfoHeaderVC: UIViewController {
         view.addSubview(avatarImageView)
         view.addSubview(usernameLabel)
         view.addSubview(nameLabel)
-        view.addSubview(locationImageView)
-        view.addSubview(locationLabel)
+
         view.addSubview(skillLabel)
     }
     
     func layoutUI() {
         let padding: CGFloat = 20
         let textImagePadding: CGFloat = 12
-        locationImageView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
@@ -84,21 +77,10 @@ class CBUserInfoHeaderVC: UIViewController {
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             nameLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            locationImageView.bottomAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
-            locationImageView.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: textImagePadding),
-            locationImageView.widthAnchor.constraint(equalToConstant: 20),
-            locationImageView.heightAnchor.constraint(equalToConstant: 20),
-            
-            locationLabel.centerYAnchor.constraint(equalTo: locationImageView.centerYAnchor),
-            locationLabel.leadingAnchor.constraint(equalTo: locationImageView.trailingAnchor, constant: 5),
-            locationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            locationLabel.heightAnchor.constraint(equalToConstant: 20),
-            
-            skillLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: textImagePadding),
-            skillLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
+            skillLabel.bottomAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
+            skillLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: textImagePadding),
             skillLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            skillLabel.heightAnchor.constraint(equalToConstant: 40),
-
+            skillLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
 }

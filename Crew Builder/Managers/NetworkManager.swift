@@ -79,7 +79,6 @@ class NetworkManager {
                 let user = try decoder.decode(User.self, from: data)
                 completed(.success(user))
             } catch {
-                //  completed(nil, error.localizedDescription)
                 completed(.failure(.invalidData))
             }
         }

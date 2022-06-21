@@ -43,9 +43,6 @@ class PersonListVC: UIViewController {
     func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        navigationItem.rightBarButtonItem = addButton
     }
     
     func configureCollectionView() {
@@ -108,29 +105,6 @@ class PersonListVC: UIViewController {
         snapShot.appendItems(followers)
         DispatchQueue.main.async {
             self.dataSource.apply(snapShot, animatingDifferences: true)
-        }
-    }
-    
-    @objc func addButtonTapped() {
-        showLoadingView()
-        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
-            guard let self = self else {return}
-            self.dismissLoadingView()
-            switch result {
-            case .success(let user):
-                let favorite = Person(login: user.login, avatarUrl: user.avatarUrl)
-                PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
-                    guard let self = self else {return}
-                    
-                    guard let error = error else {
-                        self.presentCBAlertOnMainThread(title: "Success!", message: "This person is now in your crew.", buttonTitle: "Congrats!")
-                        return
-                    }
-                    self.presentCBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
-                }
-            case .failure(let error):
-                self.presentCBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
-            }
         }
     }
 }

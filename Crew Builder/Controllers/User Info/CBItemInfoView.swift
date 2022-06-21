@@ -57,7 +57,7 @@ class CBItemInfoView: UIView {
         switch itemInfoType {
         case .production:
             symbolImageView.image = UIImage(systemName: SFSymbols.production)
-            titleLabel.text = "Completed Productions"
+            titleLabel.text = "Productions"
         case .collaborators:
             symbolImageView.image = UIImage(systemName: SFSymbols.collaborators)
             titleLabel.text = "Collaborators"

@@ -17,10 +17,12 @@ class CBProductionItemVC: CBItemForInfoVC {
 
     private func configureItems() {
         itemInfoViewOne.set(itemInfoType: .production, withCount: user.publicRepos)
+        itemInfoViewTwo.set(itemInfoType: .collaborators, withCount: user.followers)
         actionButton.set(backgroundColor: .systemPurple, title: "Add To Crew")
+        
     }
     
     override func actionButtonTapped() {
-        delegate.didTapGitHubProfile(for: user)
+        delegate.didTapAddButton(for: user)
     }
 }

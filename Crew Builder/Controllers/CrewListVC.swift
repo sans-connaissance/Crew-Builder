@@ -30,7 +30,6 @@ class CrewListVC: UIViewController {
         tableView.rowHeight = 80
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.register(CrewListCell.self, forCellReuseIdentifier: CrewListCell.reuseID)
     }
     
@@ -46,7 +45,7 @@ class CrewListVC: UIViewController {
             switch result {
             case .success(let favorites):
                 if favorites.isEmpty {
-                    self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower Screen", in: self.view)
+                    self.showEmptyStateView(with: "There's no one here.\nSearch user profiles\n to build your crew.", in: self.view)
                 } else {
                     self.favorites = favorites
                     DispatchQueue.main.async {
@@ -77,11 +76,11 @@ extension CrewListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favorite = favorites[indexPath.row]
-        let destinationViewController = PersonListVC()
+        let destinationViewController = UserInfoVC()
         destinationViewController.username = favorite.login
         destinationViewController.title = favorite.login
-        
-        navigationController?.pushViewController(destinationViewController, animated: true)
+        let navigationController = UINavigationController(rootViewController: destinationViewController)
+        present(navigationController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

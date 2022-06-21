@@ -35,8 +35,8 @@ class CBSkillLabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func returnSkill(from bioCount: Int) -> String {
-        switch bioCount {
+    func returnSkill(from userNameCount: Int) -> String {
+        switch userNameCount {
         case 0...4:
             return "Digital Effects"
         case 5...7:
