@@ -141,11 +141,11 @@
 		413EC47E2860CEAA000C1993 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				415DFF2D286206AE00D570A4 /* Search */,
+				415DFF2E286206B900D570A4 /* Person List */,
 				413EC4BB2860FEB6000C1993 /* User Info */,
-				413EC4892860D0FC000C1993 /* SearchVC.swift */,
-				413EC48B2860D172000C1993 /* CrewListVC.swift */,
-				413EC4B32860EB42000C1993 /* CBAlertVC.swift */,
-				413EC4B52860EDB7000C1993 /* PersonListVC.swift */,
+				415DFF2F286206CE00D570A4 /* Crew List */,
+				415DFF30286206FD00D570A4 /* Alert */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,6 +250,38 @@
 				413EC4912860DFA5000C1993 /* CBItemInfoView.swift */,
 			);
 			path = "User Info";
+			sourceTree = "<group>";
+		};
+		415DFF2D286206AE00D570A4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				413EC4892860D0FC000C1993 /* SearchVC.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		415DFF2E286206B900D570A4 /* Person List */ = {
+			isa = PBXGroup;
+			children = (
+				413EC4B52860EDB7000C1993 /* PersonListVC.swift */,
+			);
+			path = "Person List";
+			sourceTree = "<group>";
+		};
+		415DFF2F286206CE00D570A4 /* Crew List */ = {
+			isa = PBXGroup;
+			children = (
+				413EC48B2860D172000C1993 /* CrewListVC.swift */,
+			);
+			path = "Crew List";
+			sourceTree = "<group>";
+		};
+		415DFF30286206FD00D570A4 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				413EC4B32860EB42000C1993 /* CBAlertVC.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

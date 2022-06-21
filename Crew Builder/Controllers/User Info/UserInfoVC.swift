@@ -24,13 +24,13 @@ class UserInfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
-        layoutUI()
         getUserInfo()
+        layoutUI()
     }
     
     func configureViewController() {
         view.backgroundColor = .systemBackground
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissInfoViewController))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissInfoVC))
         navigationItem.rightBarButtonItem = doneButton
         
     }
@@ -94,7 +94,7 @@ class UserInfoVC: UIViewController {
         childVC.didMove(toParent: self)
     }
     
-    @objc func dismissInfoViewController() {
+    @objc func dismissInfoVC() {
         dismiss(animated: true)
     }
 }

@@ -15,8 +15,9 @@ class CrewListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewController()
         configureTableView()
+        configureViewController()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
