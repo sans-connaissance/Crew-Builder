@@ -13,5 +13,5 @@ enum CBError: String, Error {
     case invalidResponse = "Invalid response from the server. Please try again."
     case invalidData = "The data from the server is invalid. Please try again."
     case unableToAddToCrew = "There was an error adding this person to your crew. Please try again."
-    case alreadyInCrew = "You have already added this person to your crew. "
+    case alreadyInCrew = "You already have this person in your crew. "
 }

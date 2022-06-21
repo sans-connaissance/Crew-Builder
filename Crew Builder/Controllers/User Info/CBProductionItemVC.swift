@@ -14,7 +14,6 @@ class CBProductionItemVC: CBItemForInfoVC {
         configureItems()
     }
     
-
     private func configureItems() {
         itemInfoViewOne.set(itemInfoType: .production, withCount: user.publicRepos)
         itemInfoViewTwo.set(itemInfoType: .collaborators, withCount: user.followers)

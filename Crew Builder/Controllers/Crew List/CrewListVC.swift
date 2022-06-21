@@ -8,8 +8,6 @@
 import UIKit
 
 class CrewListVC: UIViewController {
-
-    
     let tableView = UITableView()
     var favorites: [Person] = []
     
@@ -17,12 +15,11 @@ class CrewListVC: UIViewController {
         super.viewDidLoad()
         configureTableView()
         configureViewController()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getFavorites()
+        getCrew()
     }
     
     func configureTableView() {
@@ -40,9 +37,9 @@ class CrewListVC: UIViewController {
         title = "Your Crew"
     }
     
-    func getFavorites() {
+    func getCrew() {
         PersistenceManager.retrieveFavorites { [weak self] result in
-            guard let self = self else {return}
+            guard let self = self else { return }
             switch result {
             case .success(let favorites):
                 if favorites.isEmpty {
@@ -63,7 +60,6 @@ class CrewListVC: UIViewController {
 }
 
 extension CrewListVC: UITableViewDataSource, UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favorites.count
     }
@@ -91,11 +87,9 @@ extension CrewListVC: UITableViewDataSource, UITableViewDelegate {
         tableView.deleteRows(at: [indexPath], with: .left)
         
         PersistenceManager.updateWith(favorite: favorite, actionType: .remove) { [weak self] error in
-            guard let self = self else {return}
-            guard let error = error else {return}
-            
+            guard let self = self else { return }
+            guard let error = error else { return }
             self.presentCBAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "OK")
         }
     }
 }
-

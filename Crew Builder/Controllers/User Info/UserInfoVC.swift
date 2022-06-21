@@ -115,7 +115,7 @@ extension UserInfoVC: UserInfoVCDelegate {
                         self.presentCBAlertOnMainThread(title: "Congrats!", message: "This person is in your crew.", buttonTitle: "OK")
                         return
                     }
-                    self.presentCBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
+                    self.presentCBAlertOnMainThread(title: "", message: error.rawValue, buttonTitle: "OK")
                 }
             case .failure(let error):
                 self.presentCBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")

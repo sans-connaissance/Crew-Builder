@@ -25,20 +25,13 @@ class SearchVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    @objc func pushFollowerListViewController() {
-        let personListVC = PersonListVC()
-        personListVC.username = "sallen0400"
-        personListVC.title = "Pros Near You"
-        navigationController?.pushViewController(personListVC, animated: true)
-    }
-    
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.image = UIImage(named: "gh-logo")!
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 180),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 280),
             logoImageView.widthAnchor.constraint(equalToConstant: 280)
@@ -60,7 +53,7 @@ class SearchVC: UIViewController {
     
     func configureCallToActionButton() {
         view.addSubview(callToActionButton)
-        callToActionButton.addTarget(self, action: #selector(pushFollowerListViewController), for: .touchUpInside)
+        callToActionButton.addTarget(self, action: #selector(pushPersonListVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
@@ -68,5 +61,12 @@ class SearchVC: UIViewController {
             callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             callToActionButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    @objc func pushPersonListVC() {
+        let personListVC = PersonListVC()
+        personListVC.username = "sallen0400"
+        personListVC.title = "Pros Near You"
+        navigationController?.pushViewController(personListVC, animated: true)
     }
 }

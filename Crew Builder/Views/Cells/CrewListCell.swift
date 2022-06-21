@@ -8,7 +8,6 @@
 import UIKit
 
 class CrewListCell: UITableViewCell {
-
     static let reuseID = "CrewListCell"
     let avatarImageView = CBAvatarImageView(frame: .zero)
     let usernameLabel = CBTitleLabel(textAlignment: .left, fontSize: 26)
@@ -39,21 +38,20 @@ class CrewListCell: UITableViewCell {
         let padding: CGFloat = 12
         
         NSLayoutConstraint.activate([
-            avatarImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            avatarImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             avatarImageView.heightAnchor.constraint(equalToConstant: 60),
             avatarImageView.widthAnchor.constraint(equalToConstant: 60),
             
             usernameLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
             usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 24),
-            usernameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
+            usernameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             usernameLabel.heightAnchor.constraint(equalToConstant: 35),
             
             skillLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 0),
             skillLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 24),
-            skillLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
+            skillLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             skillLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
-    
 }

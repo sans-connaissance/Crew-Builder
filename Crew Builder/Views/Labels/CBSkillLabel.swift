@@ -26,7 +26,6 @@ class CBSkillLabel: UILabel {
     private func configure() {
         textColor = .secondaryLabel
         font = UIFont.preferredFont(forTextStyle: .body)
-        
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.75
         numberOfLines = 0
@@ -34,7 +33,7 @@ class CBSkillLabel: UILabel {
         sizeToFit()
         translatesAutoresizingMaskIntoConstraints = false
     }
-    
+
     func returnSkill(from userNameCount: Int) -> String {
         switch userNameCount {
         case 0...4:

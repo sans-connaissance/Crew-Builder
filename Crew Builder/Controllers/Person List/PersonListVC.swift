@@ -12,7 +12,6 @@ protocol PersonListVCDelegate: AnyObject {
 }
 
 class PersonListVC: UIViewController {
-    
     enum Section {
         case main
     }
@@ -23,9 +22,9 @@ class PersonListVC: UIViewController {
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Person>!
     var page = 1
-    var hasMoreFollowers = true
+    var hasMorePeople = true
     var isSearching = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -46,9 +45,7 @@ class PersonListVC: UIViewController {
     }
     
     func configureCollectionView() {
-        //initialize object
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
-        //use object
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
@@ -61,33 +58,41 @@ class PersonListVC: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Refine your search"
         searchController.obscuresBackgroundDuringPresentation = false
-        self.navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
-        
     }
     
     func getPersons(username: String, page: Int) {
         showLoadingView()
         NetworkManager.shared.getPersons(for: username, page: page) { [weak self] result in
-            guard let self = self else {return}
+            guard let self = self else { return }
             self.dismissLoadingView()
             switch result {
             case .success(let persons):
                 if persons.count < 100 {
-                    self.hasMoreFollowers = false }
+                    self.hasMorePeople = false
+                }
                 self.persons.append(contentsOf: persons)
                 
                 if self.persons.isEmpty {
-                    let message = "This user doesn't have any followers. Follow them."
+                    let message = "There are no professionals in your area."
                     DispatchQueue.main.async {
                         self.showEmptyStateView(with: message, in: self.view)
-                        return
                     }
                 }
                 self.updateData(on: self.persons)
             case .failure(let error):
                 self.presentCBAlertOnMainThread(title: "Error", message: error.rawValue, buttonTitle: "OK")
             }
+        }
+    }
+    
+    func updateData(on persons: [Person]) {
+        var snapShot = NSDiffableDataSourceSnapshot<Section, Person>()
+        snapShot.appendSections([.main])
+        snapShot.appendItems(persons)
+        DispatchQueue.main.async {
+            self.dataSource.apply(snapShot, animatingDifferences: true)
         }
     }
     
@@ -98,37 +103,26 @@ class PersonListVC: UIViewController {
             return cell
         })
     }
-    
-    func updateData(on followers: [Person]) {
-        var snapShot = NSDiffableDataSourceSnapshot<Section, Person>()
-        snapShot.appendSections([.main])
-        snapShot.appendItems(followers)
-        DispatchQueue.main.async {
-            self.dataSource.apply(snapShot, animatingDifferences: true)
-        }
-    }
 }
-//nice to use an extension each time you conform to a new protocol
+
 extension PersonListVC: UICollectionViewDelegate {
-    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let offSetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         let height = scrollView.frame.size.height
         
         if offSetY > contentHeight - height {
-            guard hasMoreFollowers else { return }
+            guard hasMorePeople else { return }
             page += 1
             getPersons(username: username, page: page)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let activeArray = isSearching ? filteredPersons : persons
-        let follower = activeArray[indexPath.item]
+        let person = activeArray[indexPath.item]
         let destinationViewController = UserInfoVC()
-        destinationViewController.username = follower.login
+        destinationViewController.username = person.login
         destinationViewController.delegate = self
         let navigationController = UINavigationController(rootViewController: destinationViewController)
         present(navigationController, animated: true)
@@ -137,9 +131,9 @@ extension PersonListVC: UICollectionViewDelegate {
 
 extension PersonListVC: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let filter = searchController.searchBar.text, !filter.isEmpty else {return}
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
         isSearching = true
-        filteredPersons = persons.filter {$0.login.lowercased().contains(filter.lowercased())}
+        filteredPersons = persons.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateData(on: filteredPersons)
     }
     
@@ -158,6 +152,5 @@ extension PersonListVC: PersonListVCDelegate {
         filteredPersons.removeAll()
         collectionView.setContentOffset(.zero, animated: true)
         getPersons(username: username, page: page)
-        
     }
 }

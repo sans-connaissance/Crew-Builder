@@ -7,10 +7,6 @@
 
 import UIKit
 
-enum SkillsList {
-    case repos, gists, followers, following
-}
-
 class CBUserInfoHeaderVC: UIViewController {
 
     let avatarImageView = CBAvatarImageView(frame: .zero)
@@ -36,6 +32,13 @@ class CBUserInfoHeaderVC: UIViewController {
         configureUIElements()
     }
     
+    func addSubviews() {
+        view.addSubview(avatarImageView)
+        view.addSubview(usernameLabel)
+        view.addSubview(nameLabel)
+        view.addSubview(skillLabel)
+    }
+    
     func configureUIElements() {
         avatarImageView.downloadImage(from: user.avatarUrl)
         usernameLabel.text = user.login
@@ -49,13 +52,6 @@ class CBUserInfoHeaderVC: UIViewController {
         skillLabel.numberOfLines = 3
     }
     
-    func addSubviews() {
-        view.addSubview(avatarImageView)
-        view.addSubview(usernameLabel)
-        view.addSubview(nameLabel)
-
-        view.addSubview(skillLabel)
-    }
     
     func layoutUI() {
         let padding: CGFloat = 20
