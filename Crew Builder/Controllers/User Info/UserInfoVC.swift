@@ -10,7 +10,6 @@ import UIKit
 protocol UserInfoVCDelegate: AnyObject {
     func didTapGitHubProfile(for user: User)
     func didTapGetFollowers(for user: User)
-    
 }
 
 class UserInfoVC: UIViewController {
@@ -53,11 +52,9 @@ class UserInfoVC: UIViewController {
     
     func configureUIElements(with user: User) {
         
-        let repoItemViewController = ProfileItemVC(user: user)
+        let repoItemViewController = CBProductionItemVC(user: user)
         repoItemViewController.delegate = self
-
-
-
+        
         self.add(childVC: CBUserInfoHeaderVC(user: user), to: self.headerView)
         self.add(childVC: repoItemViewController, to: self.itemViewOne)
    
@@ -72,10 +69,6 @@ class UserInfoVC: UIViewController {
             view.addSubview(itemView)
             itemView.translatesAutoresizingMaskIntoConstraints = false
         }
-        
-        //        itemViewOne.backgroundColor = .systemPink
-        //        itemViewTwo.backgroundColor = .systemBlue
-        
         let padding: CGFloat = 20
         let itemHeight: CGFloat = 140
         

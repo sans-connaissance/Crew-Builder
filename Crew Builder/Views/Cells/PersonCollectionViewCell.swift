@@ -13,7 +13,6 @@ class PersonCollectionViewCell: UICollectionViewCell {
     let avatarImageView = CBAvatarImageView(frame: .zero)
     let skillLabel = CBSkillLabel(textAlignment: .center)
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -29,16 +28,13 @@ class PersonCollectionViewCell: UICollectionViewCell {
         let skill = skillLabel.returnSkill(from: person.login.count)
         skillLabel.text = skill
     }
-    
-    
+
     private func configure() {
         addSubview(usernameLabel)
         addSubview(avatarImageView)
         addSubview(skillLabel)
-
         
         let padding: CGFloat = 8
-        
         NSLayoutConstraint.activate([
             
             usernameLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding),

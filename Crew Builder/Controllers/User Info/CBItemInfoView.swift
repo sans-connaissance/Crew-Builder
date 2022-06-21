@@ -8,7 +8,7 @@
 import UIKit
 
 enum ItemInfoType {
-    case repos, gists, followers, following
+    case production, collaborators
 }
 
 class CBItemInfoView: UIView {
@@ -50,25 +50,17 @@ class CBItemInfoView: UIView {
             countLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             countLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             countLabel.heightAnchor.constraint(equalToConstant: 18)
-        
         ])
-        
     }
     
     func set(itemInfoType: ItemInfoType, withCount count: Int) {
         switch itemInfoType {
-        case .repos:
-            symbolImageView.image = UIImage(systemName: SFSymbols.repos)
-            titleLabel.text = "Public Repos"
-        case .gists:
-            symbolImageView.image = UIImage(systemName: SFSymbols.gists)
-            titleLabel.text = "Public Gists"
-        case .followers:
-            symbolImageView.image = UIImage(systemName: SFSymbols.followers)
-            titleLabel.text = "Followers"
-        case .following:
-            symbolImageView.image = UIImage(systemName: SFSymbols.following)
-            titleLabel.text = "Following"
+        case .production:
+            symbolImageView.image = UIImage(systemName: SFSymbols.production)
+            titleLabel.text = "Completed Productions"
+        case .collaborators:
+            symbolImageView.image = UIImage(systemName: SFSymbols.collaborators)
+            titleLabel.text = "Collaborators"
         }
         countLabel.text = String(count)
     }

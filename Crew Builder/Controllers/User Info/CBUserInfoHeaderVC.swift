@@ -18,7 +18,7 @@ class CBUserInfoHeaderVC: UIViewController {
     let nameLabel = CBSecondaryTitleLabel(fontSize: 18)
     let locationImageView = UIImageView()
     let locationLabel = CBSecondaryTitleLabel(fontSize: 18)
-    let skillLabel = CBSkillLabel(textAlignment: .left)
+    let skillLabel = CBSkillLabel(textAlignment: .center)
     
     var user: User!
     
@@ -97,7 +97,7 @@ class CBUserInfoHeaderVC: UIViewController {
             skillLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: textImagePadding),
             skillLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
             skillLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            skillLabel.heightAnchor.constraint(equalToConstant: 60),
+            skillLabel.heightAnchor.constraint(equalToConstant: 40),
 
         ])
     }
