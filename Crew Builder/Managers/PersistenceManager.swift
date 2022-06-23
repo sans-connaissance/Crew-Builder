@@ -53,7 +53,6 @@ enum PersistenceManager {
             let favorites = try decoder.decode([Person].self, from: favoritesData)
             completed(.success(favorites))
         } catch {
-          //  completed(nil, error.localizedDescription)
             completed(.failure(.unableToAddToCrew))
         }
     }

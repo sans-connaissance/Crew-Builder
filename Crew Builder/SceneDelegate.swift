@@ -8,52 +8,17 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = createTabBar()
+        window?.rootViewController = CBTabBarController()
         window?.makeKeyAndVisible()
-        configureNavigationBar()
     }
-    
-    func createSearchNavigationController() -> UINavigationController {
-        let searchVC = SearchVC()
-        searchVC.title = "Home"
-        searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-        return UINavigationController(rootViewController: searchVC)
-    }
-    
-    func createCrewNavigationController() -> UINavigationController {
-        let crewVC = CrewListVC()
-        crewVC.title = "Your Crew"
-        crewVC.tabBarItem.title = "Your Crew"
-        crewVC.tabBarItem.image = UIImage(systemName: "person.3.fill")
-        crewVC.tabBarItem.tag = 1
-        return UINavigationController(rootViewController: crewVC)
-    }
-    
-    func createTabBar() -> UITabBarController {
-        let tabBar = UITabBarController()
-        tabBar.tabBar.tintColor = .systemPurple
-        tabBar.tabBar.backgroundColor = .systemBackground
-        tabBar.tabBar.isTranslucent = true
-        tabBar.tabBar.unselectedItemTintColor = .lightGray
-        tabBar.viewControllers = [createSearchNavigationController(),
-                                  createCrewNavigationController()]
-    
-        return tabBar
-    }
-    
-    func configureNavigationBar() {
-        UINavigationBar.appearance().tintColor = .systemPurple
-    }
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -82,7 +47,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
-

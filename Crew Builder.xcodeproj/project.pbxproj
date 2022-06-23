@@ -40,6 +40,7 @@
 		413EC4BF2860FF40000C1993 /* CBItemForInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */; };
 		413EC4C12860FFE0000C1993 /* CBProductionItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4C02860FFE0000C1993 /* CBProductionItemVC.swift */; };
 		413EC4C328613236000C1993 /* CBSkillLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4C228613236000C1993 /* CBSkillLabel.swift */; };
+		41B34EB22864919A0055BCDD /* CBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B34EB12864919A0055BCDD /* CBTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBItemForInfoVC.swift; sourceTree = "<group>"; };
 		413EC4C02860FFE0000C1993 /* CBProductionItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBProductionItemVC.swift; sourceTree = "<group>"; };
 		413EC4C228613236000C1993 /* CBSkillLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBSkillLabel.swift; sourceTree = "<group>"; };
+		41B34EB12864919A0055BCDD /* CBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		413EC47E2860CEAA000C1993 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				41B34EB0286491550055BCDD /* TabBar */,
 				415DFF2D286206AE00D570A4 /* Search */,
 				415DFF2E286206B900D570A4 /* Person List */,
 				413EC4BB2860FEB6000C1993 /* User Info */,
@@ -284,6 +287,14 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		41B34EB0286491550055BCDD /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				41B34EB12864919A0055BCDD /* CBTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +373,7 @@
 				413EC4B82860F2F6000C1993 /* PersistenceManager.swift in Sources */,
 				413EC49A2860E008000C1993 /* CBTextField.swift in Sources */,
 				413EC4692860BD70000C1993 /* AppDelegate.swift in Sources */,
+				41B34EB22864919A0055BCDD /* CBTabBarController.swift in Sources */,
 				413EC4962860DFD6000C1993 /* CBTitleLabel.swift in Sources */,
 				413EC4A62860E644000C1993 /* User.swift in Sources */,
 				413EC4C12860FFE0000C1993 /* CBProductionItemVC.swift in Sources */,
