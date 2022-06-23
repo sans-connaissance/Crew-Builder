@@ -7,5 +7,5 @@
 </ul>
 <b>APP DESCRIPTION</b>
 <ul>
-<li>Crew Builder simulates how one could use an app to find and assemble a local team of media and video production specialists with varying skillsets and experience.</li>
+<li>Crew Builder simulates how a producer could use an app to find and assemble a local team of media and video production specialists with varying skillsets and experience.</li>
 </ul>
