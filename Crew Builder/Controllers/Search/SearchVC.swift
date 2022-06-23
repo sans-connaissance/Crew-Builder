@@ -28,7 +28,7 @@ class SearchVC: UIViewController {
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")!
+        logoImageView.image = Images.ghLogo
         
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120),
@@ -64,9 +64,7 @@ class SearchVC: UIViewController {
     }
     
     @objc func pushPersonListVC() {
-        let personListVC = PersonListVC()
-        personListVC.username = "sallen0400"
-        personListVC.title = "Pros Near You"
+        let personListVC = PersonListVC(username: "sallen0400", title: "Pros Near You")
         navigationController?.pushViewController(personListVC, animated: true)
     }
 }

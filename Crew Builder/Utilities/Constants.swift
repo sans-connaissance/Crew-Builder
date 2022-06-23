@@ -20,6 +20,11 @@ enum ScreenSize {
     static let minLength = min(ScreenSize.width, ScreenSize.height)
 }
 
+enum Images {
+    static let ghLogo = UIImage(named: "gh-logo")
+    
+}
+
 
 enum DeviceTypes {
     static let idiom = UIDevice.current.userInterfaceIdiom

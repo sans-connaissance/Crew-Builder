@@ -25,6 +25,16 @@ class PersonListVC: UIViewController {
     var hasMorePeople = true
     var isSearching = false
     
+    init(username: String, title: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.username = username
+        self.title = title
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
