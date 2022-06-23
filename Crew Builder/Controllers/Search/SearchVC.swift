@@ -31,7 +31,7 @@ class SearchVC: UIViewController {
         logoImageView.image = UIImage(named: "gh-logo")!
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 180),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 280),
             logoImageView.widthAnchor.constraint(equalToConstant: 280)
