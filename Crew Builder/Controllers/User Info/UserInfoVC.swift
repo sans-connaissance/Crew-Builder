@@ -55,7 +55,7 @@ class UserInfoVC: UIViewController {
         
         self.add(childVC: CBUserInfoHeaderVC(user: user), to: self.headerView)
         self.add(childVC: productionItemVC, to: self.itemViewOne)
-        self.dateLabel.text = "Crew Member Since \(user.createdAt.convertToDisplayFormat())"
+        self.dateLabel.text = "Crew Member Since \(user.createdAt.convertToMonthYearFormat())"
         
     }
     

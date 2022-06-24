@@ -24,7 +24,12 @@ class CrewListCell: UITableViewCell {
     
     func set(newMember: Person) {
         usernameLabel.text = newMember.login
-        avatarImageView.downloadImage(from: newMember.avatarUrl)
+        NetworkManager.shared.downloadImage(from: newMember.avatarUrl) { [weak self] image in
+            guard let self = self else {return}
+            DispatchQueue.main.async {
+                self.avatarImageView.image = image
+            }
+        }
         let skill = skillLabel.returnSkill(from: newMember.login.count)
         skillLabel.text = skill
     }

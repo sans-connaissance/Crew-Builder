@@ -8,7 +8,7 @@
 import UIKit
 
 class CBUserInfoHeaderVC: UIViewController {
-
+    
     let avatarImageView = CBAvatarImageView(frame: .zero)
     let usernameLabel = CBTitleLabel(textAlignment: .left, fontSize: 34)
     let nameLabel = CBSecondaryTitleLabel(fontSize: 18)
@@ -40,7 +40,12 @@ class CBUserInfoHeaderVC: UIViewController {
     }
     
     func configureUIElements() {
-        avatarImageView.downloadImage(from: user.avatarUrl)
+        NetworkManager.shared.downloadImage(from: user.avatarUrl) { [weak self] image in
+            guard let self = self else {return}
+            DispatchQueue.main.async {
+                self.avatarImageView.image = image
+            }
+        }
         usernameLabel.text = user.login
         nameLabel.text = user.name ?? ""
         configureSkillsLabel()
@@ -56,7 +61,7 @@ class CBUserInfoHeaderVC: UIViewController {
     func layoutUI() {
         let padding: CGFloat = 20
         let textImagePadding: CGFloat = 12
-
+        
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
             avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),

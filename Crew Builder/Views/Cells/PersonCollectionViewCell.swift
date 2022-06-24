@@ -24,7 +24,12 @@ class PersonCollectionViewCell: UICollectionViewCell {
     
     func set(person: Person) {
         usernameLabel.text = person.login
-        avatarImageView.downloadImage(from: person.avatarUrl)
+        NetworkManager.shared.downloadImage(from: person.avatarUrl) { [weak self] image in
+            guard let self = self else {return}
+            DispatchQueue.main.async {
+                self.avatarImageView.image = image
+            }
+        }
         let skill = skillLabel.returnSkill(from: person.login.count)
         skillLabel.text = skill
     }
