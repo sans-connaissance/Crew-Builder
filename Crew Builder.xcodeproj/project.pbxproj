@@ -40,6 +40,7 @@
 		413EC4BF2860FF40000C1993 /* CBItemForInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */; };
 		413EC4C12860FFE0000C1993 /* CBProductionItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4C02860FFE0000C1993 /* CBProductionItemVC.swift */; };
 		413EC4C328613236000C1993 /* CBSkillLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EC4C228613236000C1993 /* CBSkillLabel.swift */; };
+		4142521F2865D97400E50959 /* CBAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4142521E2865D97400E50959 /* CBAlertContainerView.swift */; };
 		41B34EB22864919A0055BCDD /* CBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B34EB12864919A0055BCDD /* CBTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		413EC4BE2860FF40000C1993 /* CBItemForInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBItemForInfoVC.swift; sourceTree = "<group>"; };
 		413EC4C02860FFE0000C1993 /* CBProductionItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBProductionItemVC.swift; sourceTree = "<group>"; };
 		413EC4C228613236000C1993 /* CBSkillLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBSkillLabel.swift; sourceTree = "<group>"; };
+		4142521E2865D97400E50959 /* CBAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBAlertContainerView.swift; sourceTree = "<group>"; };
 		41B34EB12864919A0055BCDD /* CBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				413EC4B32860EB42000C1993 /* CBAlertVC.swift */,
+				4142521E2865D97400E50959 /* CBAlertContainerView.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				413EC4AE2860E8A7000C1993 /* UIViewController+Extensions.swift in Sources */,
 				413EC4C328613236000C1993 /* CBSkillLabel.swift in Sources */,
 				413EC4B22860E8F0000C1993 /* String+Extension.swift in Sources */,
+				4142521F2865D97400E50959 /* CBAlertContainerView.swift in Sources */,
 				413EC46B2860BD70000C1993 /* SceneDelegate.swift in Sources */,
 				413EC4982860DFE5000C1993 /* CBSecondaryTitleLabel.swift in Sources */,
 				413EC4BF2860FF40000C1993 /* CBItemForInfoVC.swift in Sources */,

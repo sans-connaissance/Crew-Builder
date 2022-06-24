@@ -8,7 +8,7 @@
 import UIKit
 
 class CBAlertVC: UIViewController {
-    let containerView = UIView()
+    let containerView = CBAlertContainerView()
     let titleLabel = CBTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = CBBodyLabel(textAlignment: .center)
     let actionButton = CBButton(backgroundColor: .systemPink, title: "OK")
@@ -32,7 +32,7 @@ class CBAlertVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
         configureContainerView()
         configureTitleLabel()
         configureActionButton()
@@ -41,11 +41,7 @@ class CBAlertVC: UIViewController {
     
     func configureContainerView() {
         view.addSubview(containerView)
-        containerView.backgroundColor = .systemBackground
-        containerView.layer.cornerRadius = 16
-        containerView.layer.borderWidth = 2
-        containerView.layer.borderColor = UIColor.white.cgColor
-        containerView.translatesAutoresizingMaskIntoConstraints = false
+
         
         NSLayoutConstraint.activate([
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
