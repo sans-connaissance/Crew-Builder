@@ -56,10 +56,6 @@ class PersonCollectionViewCell: UICollectionViewCell {
             skillLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             skillLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             skillLabel.heightAnchor.constraint(equalToConstant: 20),
-            
-
-            
-            
         ])
     }
     
