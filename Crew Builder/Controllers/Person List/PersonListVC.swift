@@ -11,7 +11,7 @@ protocol PersonListVCDelegate: AnyObject {
     func didRequestPersons(for username: String)
 }
 
-class PersonListVC: UIViewController {
+class PersonListVC: CBDataLoadingVC {
     enum Section {
         case main
     }

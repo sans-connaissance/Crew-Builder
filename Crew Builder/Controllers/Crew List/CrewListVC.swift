@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CrewListVC: UIViewController {
+class CrewListVC: CBDataLoadingVC {
     let tableView = UITableView()
     var favorites: [Person] = []
     

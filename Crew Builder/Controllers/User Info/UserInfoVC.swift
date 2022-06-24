@@ -11,7 +11,7 @@ protocol UserInfoVCDelegate: AnyObject {
     func didTapAddButton(for user: User)
 }
 
-class UserInfoVC: UIViewController {
+class UserInfoVC: CBDataLoadingVC {
     
     let headerView = UIView()
     let itemViewOne = UIView()
